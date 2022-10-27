@@ -1,8 +1,10 @@
+import { Navbar, Map } from './Components';
+import './index.scss';
 
 function App() {
   return (
     <div className="App">
-      <h1>This should show</h1>
+      <Navbar />
     </div>
   );
 }
