@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
 
 * {
   margin: 0;
@@ -21,4 +22,11 @@
   --navFont: 'Josefin Sans', sans-serif;
   --typingFont: 'Nixie One', cursive;
   --mainFont: 'Marcellus', serif;
+  --displayFont: 'Averia Serif Libre', cursive;;
+}
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--cloud);
 }
