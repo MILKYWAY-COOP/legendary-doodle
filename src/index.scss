@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Nixie+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 * {
   margin: 0;
@@ -20,7 +21,8 @@
 
   //fonts
   --navFont: 'Josefin Sans', sans-serif;
-  --typingFont: 'Nixie One', cursive;
+  // --typingFont: 'Nixie One', cursive;
+  --typingFont: 'Fira Code', monospace;
   --mainFont: 'Marcellus', serif;
   --displayFont: 'Averia Serif Libre', cursive;;
 }
