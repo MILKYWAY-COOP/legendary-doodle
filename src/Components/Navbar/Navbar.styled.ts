@@ -43,6 +43,7 @@ export const NavbarContainer = styled.div`
       position: relative;
 
       .dropdownBackground {
+        z-index: 9999;
         width: 100px;
         height: 100px;
         position: absolute;
@@ -91,18 +92,20 @@ export const NavbarContainer = styled.div`
           display: flex;
           flex-direction: column;
           justify-content: center;
+          transition: all 0.2s ease;
 
-          /* &:hover {
-            background-color: var(--brightRed);
-            color: var(--cloud);
-          } */
+          &:hover {
+            span {
+              color: var(--brightRed);
+            }
+          }
 
           .dropdown {
             opacity: 0;
             position: absolute;
             overflow: hidden;
             padding: 20px;
-            top: -20px;
+            top: -70px;
             border-radius: 2px;
             transition: all 0.5s;
             transform: translateY(100px);
@@ -110,20 +113,30 @@ export const NavbarContainer = styled.div`
             display: none;
             flex-direction: column;
             justify-content: center;
+            height: auto;
+            z-index: 9999;
 
             .about,
             .involved,
             .supporters {
-              min-width: fit-content;
-              height: auto;
+              height: inherit;
               display: flex;
               flex-direction: column;
+              justify-content: space-evenly;
 
               .text {
                 font-family: var(--displayFont);
                 font-size: 1.2rem;
+                height: 2rem;
                 width: 100%;
                 text-overflow: clip;
+                padding: 10px 0;
+                transition: all 0.2s ease;
+
+                &:hover {
+                  text-decoration: underline;
+                  cursor: pointer;
+                }
               }
             }
 
@@ -132,8 +145,9 @@ export const NavbarContainer = styled.div`
             }
 
             .involved {
-              min-width: 200px;
+              min-width: 150px;
             }
+
             .supporters {
               min-width: 200px;
             }
