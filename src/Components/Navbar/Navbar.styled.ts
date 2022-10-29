@@ -94,6 +94,14 @@ export const NavbarContainer = styled.div`
           justify-content: center;
           transition: all 0.2s ease;
 
+          span {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+          }
+
           &:hover {
             span {
               color: var(--brightRed);
@@ -125,7 +133,7 @@ export const NavbarContainer = styled.div`
               justify-content: space-evenly;
 
               .text {
-                font-family: var(--displayFont);
+                font-family: var(--mainFont);
                 font-size: 1.2rem;
                 height: 2rem;
                 width: 100%;
