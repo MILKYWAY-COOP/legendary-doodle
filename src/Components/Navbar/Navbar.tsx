@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { NavbarContainer } from './Navbar.styled';
 
 const Navbar = () => {
@@ -10,6 +11,8 @@ const Navbar = () => {
 
   const background = backgroundRef.current;
   const nav = navRef.current;
+
+  const navigate = useNavigate();
 
   list.forEach((listItem) => {
     if (listItem.className === 'not') return;
@@ -79,32 +82,97 @@ const Navbar = () => {
 
           <ul ref={listRef}>
             <li>
-              <span>About Us</span>
+              <span>
+                About Us
+                <div>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    className='bi bi-caret-down-fill'
+                    viewBox='0 0 16 16'
+                  >
+                    <path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z' />
+                  </svg>
+                </div>
+              </span>
               <div className='dropdown dropdown1'>
                 <div className='about'>
-                  <div className='text'>Our Team</div>
-                  <div className='text'>Directors</div>
+                  <div className='text' onClick={() => navigate('/our-team')}>
+                    Our Team
+                  </div>
+                  <div className='text' onClick={() => navigate('/directors')}>
+                    Directors
+                  </div>
                 </div>
               </div>
             </li>
 
             <li>
-              <span>Get Involved</span>
+              <span>
+                Get Involved
+                <div>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    className='bi bi-caret-down-fill'
+                    viewBox='0 0 16 16'
+                  >
+                    <path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z' />
+                  </svg>
+                </div>
+              </span>
               <div className='dropdown dropdown2'>
                 <div className='involved'>
-                  <div className='text'>Why Donate?</div>
-                  <div className='text'>Wish List</div>
+                  <div className='text' onClick={() => navigate('/why-donate')}>
+                    Why Donate?
+                  </div>
+                  <div className='text' onClick={() => navigate('/wish-list')}>
+                    Wish List
+                  </div>
                 </div>
               </div>
             </li>
 
             <li>
-              <span>Supporters</span>
+              <span>
+                Supporters
+                <div>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    className='bi bi-caret-down-fill'
+                    viewBox='0 0 16 16'
+                  >
+                    <path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z' />
+                  </svg>
+                </div>
+              </span>
               <div className='dropdown dropdown3'>
                 <div className='supporters'>
-                  <div className='text'>Individual Supporters</div>
-                  <div className='text'>Business Supporters</div>
-                  <div className='text'>Church Supporters</div>
+                  <div
+                    className='text'
+                    onClick={() => navigate('/individual-supporters')}
+                  >
+                    Individual Supporters
+                  </div>
+                  <div
+                    className='text'
+                    onClick={() => navigate('/business-supporters')}
+                  >
+                    Business Supporters
+                  </div>
+                  <div
+                    className='text'
+                    onClick={() => navigate('/church-supporters')}
+                  >
+                    Church Supporters
+                  </div>
                 </div>
               </div>
             </li>
