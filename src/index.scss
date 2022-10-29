@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 :root {
   // Colors
   --brightRed: #de354c;
@@ -18,17 +23,38 @@
   --purpleTingedGrey: #283747;
   --cloud: #f3f3f3;
   --lightBlue: #dfe9f5;
+  --charcoal: rgb(27,27,27);
 
   //fonts
   --navFont: 'Josefin Sans', sans-serif;
-  // --typingFont: 'Nixie One', cursive;
   --typingFont: 'Fira Code', monospace;
   --mainFont: 'Marcellus', serif;
-  --displayFont: 'Averia Serif Libre', cursive;;
+  --displayFont: 'Averia Serif Libre', cursive;
 }
 
 .App {
   width: 100vw;
   min-height: 100vh;
+  background: var(--cloud);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: var(--cloud);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
   background: var(--cloud);
 }
