@@ -16,14 +16,14 @@ export const MainContainer = styled.div`
 
   .middle {
     width: max-content;
-    background: var(--purpleTingedGrey);
+    background: var(--charcoal);
     border-radius: 5px;
     padding-right: 0.3em;
 
     h1 {
       font-size: 2.5rem;
       font-family: var(--typingFont);
-      color: var(--cloud);
+      color: white;
       position: relative;
       font-weight: 100;
       width: max-content;
@@ -40,14 +40,14 @@ export const MainContainer = styled.div`
 
       &::before {
         z-index: 100;
-        background: var(--purpleTingedGrey);
+        background: var(--charcoal);
         animation: typewriter 4s steps(23) 1s forwards;
       }
 
       &::after {
         z-index: 100;
         width: 0.125em;
-        background: var(--cloud);
+        background: white;
         animation: typewriter 4s steps(23) 1s forwards,
           blink 500ms steps(23) infinite;
       }
