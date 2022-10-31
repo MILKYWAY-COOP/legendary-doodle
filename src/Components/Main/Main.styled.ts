@@ -1,4 +1,7 @@
+import { Files } from '../../Elements';
 import styled from 'styled-components';
+
+const { img4 } = Files;
 
 export const MainContainer = styled.div`
   z-index: 1;
@@ -8,7 +11,7 @@ export const MainContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url('imgs/img4.JPG');
+  background-image: url(${img4});
   text-align: center;
   display: flex;
   align-items: center;
