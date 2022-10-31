@@ -9,11 +9,13 @@ import {
   WDonate,
   Directors
 } from './Pages';
+import { Navbar, Footer } from './Components';
 import './index.scss';
 
 function App() {
   return (
     <div className='App'>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/our-team' element={<Team />} />
@@ -24,6 +26,7 @@ function App() {
         <Route path='/church-supporters' element={<Church />} />
         <Route path='/business-supporters' element={<Business />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
