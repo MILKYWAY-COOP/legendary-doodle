@@ -14,4 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-const googleAPI = 'AIzaSyDbuVBC5I-97jCizmKpK2MIwQmiD5sUh2E';
+//export const googleAPIKey = 'AIzaSyDbuVBC5I-97jCizmKpK2MIwQmiD5sUh2E';
+//export const googleAPIKey = 'AIzaSyDmTkkVZ-ELq-_zksOUdZNBc-BxTo19rsI';
+//export const googleAPIKey = 'AIzaSyCjb3Y4IDQyLmehiQPHVswCwewgl9OnUU4';
+export const googleAPIKey = 'AIzaSyDmTkkVZ-ELq-_zksOUdZNBc-BxTo19rsI';
