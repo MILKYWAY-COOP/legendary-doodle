@@ -77,7 +77,7 @@ export const NavbarContainer = styled.div`
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 0.5rem;
+        padding: 0.5rem;
 
         li {
           position: relative;
@@ -133,7 +133,6 @@ export const NavbarContainer = styled.div`
               justify-content: space-evenly;
 
               .text {
-                font-family: var(--mainFont);
                 font-size: 1.2rem;
                 height: 2rem;
                 width: 100%;
@@ -180,6 +179,10 @@ export const NavbarContainer = styled.div`
           border-radius: 0.2rem;
           color: var(--cloud);
         }
+      }
+
+      @media (max-width: 900px) {
+        display: none;
       }
     }
   }
