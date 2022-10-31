@@ -21,12 +21,16 @@ export const MainContainer = styled.div`
     padding-right: 0.3em;
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.5em;
       font-family: var(--typingFont);
       color: white;
       position: relative;
       font-weight: 100;
       width: max-content;
+
+      @media (max-width: 900px) {
+        font-size: 1.5em;
+      }
 
       &::before,
       &::after {
