@@ -46,7 +46,7 @@ const About = () => {
                   Wangu wa Makeri.
                 </a>{' '}
                 In the late 1990’s a group of concerned citizens were inspired
-                to turn this ruins into a home for needy and neglected children.
+                to turn these ruins into a home for needy and neglected children.
                 In Month of Year that dream became a reality and the doors of
                 Koimbi Children’s Home officially opened. To date KCH has is a
                 safe haven to X children in need.
