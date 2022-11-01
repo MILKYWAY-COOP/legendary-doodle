@@ -12,25 +12,20 @@ export const ChurchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1em;
-  font-family: 'Gloria Hallelujah', cursive;
-  font-size: 1.4rem;
-  margin: 0;
-  padding: 1rem;
-  display: grid;
-  place-items: center;
+  padding: 1em;
+  gap: 1em;
 
   h1 {
     font-family: var(--mainFont);
-    font-size: 3rem;
-    color: black;
+    font-size: 2rem;
+    color: var(--cloud);
     text-align: center;
-    padding: 0.1em;
-    background: white;
+    padding: 0.5em;
+    background: var(--brightRed);
     border-radius: 0.4rem;
 
     @media (max-width: 900px) {
-        font-size: 2rem;
+      font-size: 2rem;
     }
 
     @media (max-width: 500px) {
@@ -40,33 +35,38 @@ export const ChurchContainer = styled.div`
 
   p {
     font-family: var(--mainFont);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: black;
     background: white;
     width: 900px;
     border-radius: 0.4rem;
     padding: 1rem;
 
-    @media (max-width: 500px) {
-      font-size: 1rem;
-      width: 400px;
+    @media (max-width: 800px) {
+      width: 700px;
+      font-size: 1.5rem;
     }
-    /* @media (max-width: 600px) {
-      width: 500px;
-      font-size: 1.3rem;
-    }
+
     @media (max-width: 700px) {
       width: 600px;
       font-size: 1.4rem;
     }
-    @media (max-width: 800px) {
-      width: 700px;
-      font-size: 1.5rem;
-    } */
+
+    @media (max-width: 600px) {
+      width: 500px;
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 1rem;
+      width: 400px;
+    }
   }
 
   ul {
-    font-family: var(--mainFont);
+    font-family: var(--handWritingFont);
+    font-weight: 900;
+    font-size: 1.5rem;
     list-style-position: inside;
     width: 900px;
     max-width: 100%;
@@ -74,22 +74,25 @@ export const ChurchContainer = styled.div`
     box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.15);
     border-radius: 0.4rem;
 
-    @media (max-width: 500px) {
-      width: 400px;
-      font-size: 1rem;
+    @media (max-width: 800px) {
+      max-width: 700px;
+      font-size: 1.5rem;
     }
-    /* @media (max-width: 600px) {
-      width: 500px;
-      font-size: 1.3rem;
-    }
+
     @media (max-width: 700px) {
-      width: 600px;
+      max-width: 600px;
       font-size: 1.4rem;
     }
-    @media (max-width: 800px) {
-      width: 700px;
-      font-size: 1.5rem;
-    } */
+
+    @media (max-width: 600px) {
+      max-width: 500px;
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 500px) {
+      max-width: 400px;
+      font-size: 1rem;
+    }
   }
 
   li {
@@ -123,6 +126,8 @@ export const ChurchContainer = styled.div`
       ' ';
   }
 
-  @media (max-width: 500px) {
+  li:nth-child(3n - 2)::marker {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='14' viewBox='0 0 50 50'%3E%3Cpath d='M48.3 23.7c-1-9.9-9.9-15.6-18.8-17.8-8.2-2.1-18.8-2.6-24.6 4.8C.6 16.2 1 23.6 4.3 29.3c-.5 1-.8 2-1 3-.6 4 2 7.6 5.1 10 5.9 4.4 14 4.2 19.6-.4 1.5 0 2.9-.2 4.4-.5 1.8 0 3.5 0 5.3-.1 2.3-.1 3.5-1.9 3.5-3.7 4.5-3.3 7.7-8.2 7.1-13.9zM9.1 17.8c1.1-4.1 4.9-5.8 8.8-6.1.9-.1 1.9-.1 2.9-.1-3.2 1.6-6.3 4.6-8 7.4-.1.1-.1.2-.2.3-1.1.9-2.1 1.9-3 2.9-.2.2-.4.4-.5.6-.4-1.7-.5-3.3 0-5z'/%3E%3C/svg%3E")
+      ' ';
   }
 `;
