@@ -38,10 +38,12 @@ export const FooterContainer = styled.div`
         font-family: var(--mainFont);
         display: flex;
         align-items: center;
-        gap: 10px;
+        justify-content: space-evenly;
 
         span {
           font-size: 2.5rem;
+          width: 3rem;
+          text-align: center;
         }
       }
 
