@@ -6,7 +6,7 @@ const { img4 } = Files;
 export const MainContainer = styled.div`
   z-index: 1;
   width: 100%;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 4rem + 5px);
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,20 +79,21 @@ export const MainContainer = styled.div`
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 2rem;
+    bottom: 4rem;
 
     svg {
-      fill: var(--cloud);
-      width: 30px;
-      height: 30px;
+      fill: white;
+      width: 40px;
+      height: 40px;
     }
 
     span {
+      display: none;
       padding-top: 0.5rem;
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-family: var(--displayFont);
-      font-weight: 400;
-      color: var(--cloud);
+      font-weight: 900;
+      color: white;
     }
   }
 `;
