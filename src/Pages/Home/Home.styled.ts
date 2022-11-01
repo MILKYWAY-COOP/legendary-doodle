@@ -48,7 +48,7 @@ export const HomeContainer = styled.div`
       }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 500px) {
       .curve {
         position: absolute;
         height: 100px;
@@ -60,10 +60,10 @@ export const HomeContainer = styled.div`
           display: block;
           position: absolute;
           border-radius: 100% 50%;
-          width: 60%;
+          width: 59%;
           height: 100%;
           background-color: var(--purePurple);
-          transform: translate(75%, 35%);
+          transform: translate(65%, 35%);
         }
 
         &::after {
