@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+// import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBgV6k9SicGfL2nH9VI78cE4NAYxX0FVkM',
@@ -12,7 +12,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 //export const googleAPIKey = 'AIzaSyDbuVBC5I-97jCizmKpK2MIwQmiD5sUh2E';
 //export const googleAPIKey = 'AIzaSyDmTkkVZ-ELq-_zksOUdZNBc-BxTo19rsI';
