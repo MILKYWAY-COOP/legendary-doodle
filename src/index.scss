@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Nixie+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 * {
   margin: 0;
@@ -23,13 +24,14 @@ body {
   --purpleTingedGrey: #283747;
   --cloud: #f3f3f3;
   --lightBlue: #dfe9f5;
-  --charcoal: rgb(27,27,27);
+  --charcoal: rgb(27, 27, 27);
 
   //fonts
   --navFont: 'Josefin Sans', sans-serif;
   --typingFont: 'Fira Code', monospace;
   --mainFont: 'Marcellus', serif;
   --displayFont: 'Averia Serif Libre', cursive;
+  --handWritingFont: 'Indie Flower', cursive;
 }
 
 .App {
@@ -38,23 +40,39 @@ body {
   background: var(--cloud);
 }
 
-::-webkit-scrollbar {
-  width: 8px;
+@media (min-width: 900px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: var(--cloud);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: var(--cloud);
+  }
 }
 
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: var(--cloud);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-
-::-webkit-scrollbar-thumb:window-inactive {
-  background: var(--cloud);
+.milkyway {
+  background-color: orange;
+  p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Syne Mono', monospace;
+    text-align: center;
+  }
+  a {
+    font-family: 'Syne Mono', monospace;
+    color: black;
+  }
 }
