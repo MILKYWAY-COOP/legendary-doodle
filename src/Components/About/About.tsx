@@ -42,14 +42,15 @@ const About = () => {
                 <a
                   href='https://en.wikipedia.org/wiki/Wangu_wa_Makeri'
                   target='_blank'
+                  rel='noreferrer'
                 >
                   Wangu wa Makeri.
                 </a>{' '}
                 In the late 1990’s a group of concerned citizens were inspired
-                to turn these ruins into a home for needy and neglected children.
-                In Month of Year that dream became a reality and the doors of
-                Koimbi Children’s Home officially opened. To date KCH has is a
-                safe haven to X children in need.
+                to turn these ruins into a home for needy and neglected
+                children. In Month of Year that dream became a reality and the
+                doors of Koimbi Children’s Home officially opened. To date KCH
+                has is a safe haven to X children in need.
               </p>
             </div>
           </li>
