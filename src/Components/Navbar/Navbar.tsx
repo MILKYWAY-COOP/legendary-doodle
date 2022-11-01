@@ -8,48 +8,53 @@ const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
 
   const background = backgroundRef.current;
   const nav = navRef.current;
+  const mobileToggle = mobileToggleRef?.current;
 
   const navigate = useNavigate();
 
+  const { innerWidth } = window;
+
   list.forEach((listItem) => {
-    if (listItem.className === 'not') return;
-    listItem.addEventListener('mouseenter', (e) => {
-      const target = e.target as HTMLElement;
-      const dropdown = target.querySelector('.dropdown') as HTMLElement;
-      const dropdownCoords = dropdown?.getBoundingClientRect();
-      const navCoords = nav?.getBoundingClientRect();
-      const left = navCoords ? navCoords.left : 0;
+    if (listItem.className !== 'not' && innerWidth > 900) {
+      listItem.addEventListener('mouseenter', (e) => {
+        const target = e.target as HTMLElement;
+        const dropdown = target.querySelector('.dropdown') as HTMLElement;
+        const dropdownCoords = dropdown?.getBoundingClientRect();
+        const navCoords = nav?.getBoundingClientRect();
+        const left = navCoords ? navCoords.left : 0;
 
-      const coords = {
-        height: dropdownCoords.height,
-        width: dropdownCoords.width,
-        top: dropdownCoords.top,
-        left: dropdownCoords.left - left
-      };
+        const coords = {
+          height: dropdownCoords.height,
+          width: dropdownCoords.width,
+          top: dropdownCoords.top,
+          left: dropdownCoords.left - left
+        };
 
-      background?.style.setProperty('width', `${coords.width}px`);
-      background?.style.setProperty('height', `${coords.height}px`);
-      background?.style.setProperty(
-        'transform',
-        `translate(${coords.left}px, ${coords.top}px)`
-      );
+        background?.style.setProperty('width', `${coords.width}px`);
+        background?.style.setProperty('height', `${coords.height}px`);
+        background?.style.setProperty(
+          'transform',
+          `translate(${coords.left}px, ${coords.top}px)`
+        );
 
-      target.classList.add('trigger-enter');
-      setTimeout(() => {
-        target.classList.contains('trigger-enter') &&
-          target.classList.add('trigger-enter-active');
-      }, 150);
-      background?.classList.add('open');
-    });
+        target.classList.add('trigger-enter');
+        setTimeout(() => {
+          target.classList.contains('trigger-enter') &&
+            target.classList.add('trigger-enter-active');
+        }, 150);
+        background?.classList.add('open');
+      });
 
-    listItem.addEventListener('mouseleave', (e) => {
-      const target = e.target as HTMLElement;
-      target.classList.remove('trigger-enter', 'trigger-enter-active');
-      background?.classList.remove('open');
-    });
+      listItem.addEventListener('mouseleave', (e) => {
+        const target = e.target as HTMLElement;
+        target.classList.remove('trigger-enter', 'trigger-enter-active');
+        background?.classList.remove('open');
+      });
+    }
   });
 
   useEffect(() => {
@@ -60,10 +65,27 @@ const Navbar = () => {
     }
   }, [listRef]);
 
+  function closeNav() {
+    nav?.setAttribute('data-visible', 'false');
+    mobileToggle?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = 'scroll';
+  }
+
+  function toggleMenu() {
+    const visible = nav?.getAttribute('data-visible');
+    if (visible === 'false') {
+      mobileToggle?.setAttribute('aria-expanded', 'true');
+      nav?.setAttribute('data-visible', 'true');
+      document.body.style.overflow = 'hidden';
+    } else {
+      closeNav();
+    }
+  }
+
   return (
     <NavbarContainer>
       <nav>
-        <div className='logo'>
+        <div className='logo' onClick={() => navigate('/')}>
           <div>
             <span>K</span>
             <span>O</span>
@@ -75,16 +97,22 @@ const Navbar = () => {
           <span>CHILDRENS HOME</span>
         </div>
 
-        <div className='navLinks' ref={navRef}>
+        <button
+          ref={mobileToggleRef}
+          onClick={toggleMenu}
+          className='mobile-nav-toggle'
+          aria-expanded='false'
+        ></button>
+
+        <div className='navLinks' ref={navRef} data-visible='false'>
           <div className='dropdownBackground' ref={backgroundRef}>
             <span className='arrow'></span>
           </div>
-
           <ul ref={listRef}>
             <li>
               <span>
-                About Us
-                <div>
+                About
+                <div className='dropper'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='16'
@@ -100,10 +128,7 @@ const Navbar = () => {
               <div className='dropdown dropdown1'>
                 <div className='about'>
                   <div className='text' onClick={() => navigate('/our-team')}>
-                    Our Team
-                  </div>
-                  <div className='text' onClick={() => navigate('/directors')}>
-                    Directors
+                    The Team
                   </div>
                 </div>
               </div>
@@ -112,7 +137,7 @@ const Navbar = () => {
             <li>
               <span>
                 Get Involved
-                <div>
+                <div className='dropper'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='16'
@@ -140,7 +165,7 @@ const Navbar = () => {
             <li>
               <span>
                 Supporters
-                <div>
+                <div className='dropper'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='16'
@@ -177,10 +202,16 @@ const Navbar = () => {
               </div>
             </li>
 
-            <li id='donate' className='not'>
+            <li id='donate' className='not' onClick={() => navigate('/donate')}>
               DONATE
             </li>
-            <li className='not'>Contact Us</li>
+            <li
+              id='contact'
+              className='not'
+              onClick={() => navigate('/contact-us')}
+            >
+              Contact Us
+            </li>
           </ul>
         </div>
       </nav>
