@@ -4,7 +4,7 @@ import Logo from './hold.svg';
 
 export const Footer = () => {
   return (
-      <FooterContainer>
+    <FooterContainer>
       <div className='logo'>
         <img src={Logo} alt='logo' />
         <div className='text'>
@@ -25,21 +25,26 @@ export const Footer = () => {
           Provide a safe and supportive home for orphaned and abandoned children
           in Murang'a and her surrounding environs.
         </p>
-          </div>
-          
+      </div>
+
       <div className='support'>
         <h5>Our Supporters</h5>
-        <Link to='/individual-supporters' className='Link'>Individual Supporters</Link>
-        <Link to='/church-supporters' className='Link'>Church Supporters</Link>
-        <Link to='/business-supporters' className='Link'>Business Supporters</Link>
+        <Link to='/individual-supporters' className='Link'>
+          Individual Supporters
+        </Link>
+        <Link to='/church-supporters' className='Link'>
+          Church Supporters
+        </Link>
+        <Link to='/business-supporters' className='Link'>
+          Business Supporters
+        </Link>
       </div>
       <div className='contact'>
         <h5>Contact Us</h5>
         <p>Phone Number 1</p>
         <p>Phone Number 2</p>
         <p>P.O Box 1234 Murang'a</p>
-          </div>
-          
+      </div>
     </FooterContainer>
   );
 };
