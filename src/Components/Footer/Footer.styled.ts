@@ -41,16 +41,15 @@ export const FooterContainer = styled.div`
         justify-content: space-evenly;
 
         span {
+          font-family: var(--typingFont);
           font-size: 2.5rem;
-          width: 3rem;
-          text-align: center;
         }
       }
-
+      
       span {
         width: 100%;
         font-size: 1.5rem;
-        font-family: var(--mainFont);
+        font-family: var(--typingFont);
         text-align: center;
       }
     }
