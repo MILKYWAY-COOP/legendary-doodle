@@ -22,7 +22,7 @@ export const FooterContainer = styled.div`
     img {
       width: 30%;
       height: auto;
-      z-index: 9999;
+      z-index: 8000;
     }
 
     .text {
@@ -64,7 +64,7 @@ export const FooterContainer = styled.div`
     font-family: var(--mainFont);
     color: var(--cloud);
     height: 100%;
-    z-index: 9999;
+    z-index: 8000;
 
     h5 {
       width: 100%;
