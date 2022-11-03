@@ -4,6 +4,10 @@ import { NavbarContainer } from './Navbar.styled';
 
 const Navbar = () => {
   const [list, setList] = useState<Element[]>([]);
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
+  const [top, setTop] = useState<number>(0);
+  const [left, setLeft] = useState<number>(0);
 
   const navRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
@@ -34,12 +38,17 @@ const Navbar = () => {
           left: dropdownCoords.left - left
         };
 
-        background?.style.setProperty('width', `${coords.width}px`);
-        background?.style.setProperty('height', `${coords.height}px`);
-        background?.style.setProperty(
-          'transform',
-          `translate(${coords.left}px, ${coords.top}px)`
-        );
+        setWidth(coords.width);
+        setHeight(coords.height);
+        setTop(coords.top);
+        setLeft(coords.left);
+
+        // background?.style.setProperty('width', `${coords.width}px`);
+        // background?.style.setProperty('height', `${coords.height}px`);
+        // background?.style.setProperty(
+        //   'transform',
+        //   `translate(${coords.left}px, ${coords.top}px)`
+        // );
 
         target.classList.add('trigger-enter');
         setTimeout(() => {
@@ -105,7 +114,15 @@ const Navbar = () => {
         ></button>
 
         <div className='navLinks' ref={navRef} data-visible='false'>
-          <div className='dropdownBackground' ref={backgroundRef}>
+          <div
+            className='dropdownBackground'
+            ref={backgroundRef}
+            style={{
+              width: `${width}px`,
+              height: `${height}px`,
+              transform: `translate(${left}px, ${top}px)`
+            }}
+          >
             <span className='arrow'></span>
           </div>
           <ul ref={listRef}>
