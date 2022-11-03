@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const { img4 } = Files;
 
 export const MainContainer = styled.div`
-  z-index: 1;
+  z-index: 50;
   width: 100%;
   height: calc(100vh - 4rem + 5px);
   position: relative;
