@@ -19,16 +19,16 @@ const Navbar = () => {
   const mobileToggle = mobileToggleRef?.current;
 
   const navigate = useNavigate();
-
+  
   const { innerWidth } = window;
-
+  
   list.forEach((listItem) => {
     if (listItem.className !== 'not' && innerWidth > 900) {
       listItem.addEventListener('mouseenter', (e) => {
         const target = e.target as HTMLElement;
+        const navCoords = nav?.getBoundingClientRect();
         const dropdown = target.querySelector('.dropdown') as HTMLElement;
         const dropdownCoords = dropdown?.getBoundingClientRect();
-        const navCoords = nav?.getBoundingClientRect();
         const left = navCoords ? navCoords.left : 0;
 
         const coords = {
@@ -38,24 +38,18 @@ const Navbar = () => {
           left: dropdownCoords.left - left
         };
 
-        setWidth(coords.width);
-        setHeight(coords.height);
-        setTop(coords.top);
-        setLeft(coords.left);
-
-        // background?.style.setProperty('width', `${coords.width}px`);
-        // background?.style.setProperty('height', `${coords.height}px`);
-        // background?.style.setProperty(
-        //   'transform',
-        //   `translate(${coords.left}px, ${coords.top}px)`
-        // );
-
         target.classList.add('trigger-enter');
         setTimeout(() => {
           target.classList.contains('trigger-enter') &&
             target.classList.add('trigger-enter-active');
         }, 150);
         background?.classList.add('open');
+
+        console.log(coords);
+        setTop(coords.top);
+        setLeft(coords.left);
+        setWidth(coords.width);
+        setHeight(coords.height);
       });
 
       listItem.addEventListener('mouseleave', (e) => {
