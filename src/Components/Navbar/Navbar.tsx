@@ -19,9 +19,9 @@ const Navbar = () => {
   const mobileToggle = mobileToggleRef?.current;
 
   const navigate = useNavigate();
-  
+
   const { innerWidth } = window;
-  
+
   list.forEach((listItem) => {
     if (listItem.className !== 'not' && innerWidth > 900) {
       listItem.addEventListener('mouseenter', (e) => {
@@ -138,7 +138,13 @@ const Navbar = () => {
               </span>
               <div className='dropdown dropdown1'>
                 <div className='about'>
-                  <div className='text' onClick={() => navigate('/our-team')}>
+                  <div
+                    className='text'
+                    onClick={() => {
+                      navigate('/our-team');
+                      toggleMenu();
+                    }}
+                  >
                     The Team
                   </div>
                 </div>
@@ -163,10 +169,22 @@ const Navbar = () => {
               </span>
               <div className='dropdown dropdown2'>
                 <div className='involved'>
-                  <div className='text' onClick={() => navigate('/why-donate')}>
+                  <div
+                    className='text'
+                    onClick={() => {
+                      navigate('/why-donate');
+                      toggleMenu();
+                    }}
+                  >
                     Why Donate?
                   </div>
-                  <div className='text' onClick={() => navigate('/wish-list')}>
+                  <div
+                    className='text'
+                    onClick={() => {
+                      navigate('/wish-list');
+                      toggleMenu();
+                    }}
+                  >
                     Wish List
                   </div>
                 </div>
@@ -193,19 +211,28 @@ const Navbar = () => {
                 <div className='supporters'>
                   <div
                     className='text'
-                    onClick={() => navigate('/individual-supporters')}
+                    onClick={() => {
+                      navigate('/individual-supporters');
+                      toggleMenu();
+                    }}
                   >
                     Individual Supporters
                   </div>
                   <div
                     className='text'
-                    onClick={() => navigate('/business-supporters')}
+                    onClick={() => {
+                      navigate('/business-supporters');
+                      toggleMenu();
+                    }}
                   >
                     Business Supporters
                   </div>
                   <div
                     className='text'
-                    onClick={() => navigate('/church-supporters')}
+                    onClick={() => {
+                      navigate('/church-supporters');
+                      toggleMenu();
+                    }}
                   >
                     Church Supporters
                   </div>
@@ -213,13 +240,23 @@ const Navbar = () => {
               </div>
             </li>
 
-            <li id='donate' className='not' onClick={() => navigate('/donate')}>
+            <li
+              id='donate'
+              className='not'
+              onClick={() => {
+                navigate('/donate');
+                toggleMenu();
+              }}
+            >
               DONATE
             </li>
             <li
               id='contact'
               className='not'
-              onClick={() => navigate('/contact-us')}
+              onClick={() => {
+                navigate('/contact-us');
+                toggleMenu();
+              }}
             >
               Contact Us
             </li>
