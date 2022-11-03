@@ -4,7 +4,6 @@ import { Files } from '../../Elements';
 const { list, close } = Files;
 
 export const NavbarContainer = styled.div`
-  position: relative;
   nav {
     display: flex;
     flex-direction: row;
@@ -15,6 +14,7 @@ export const NavbarContainer = styled.div`
     height: 4rem;
     background-color: var(--cloud);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    position: relative;
 
     .logo {
       cursor: pointer;
@@ -62,16 +62,16 @@ export const NavbarContainer = styled.div`
         background: var(--brightRed);
         border-radius: 4px;
         box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
-        0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+          0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.3s, opacity 0.1s, transform 0.2s;
         transform-origin: 50% 0;
         display: flex;
         opacity: 0;
-        
+
         &.open {
           opacity: 1;
         }
-        
+
         .arrow {
           position: absolute;
           width: 20px;
