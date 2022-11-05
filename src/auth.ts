@@ -11,7 +11,7 @@ const firebaseConfig = {
   measurementId: 'G-ZXYGPZE31H'
 };
 
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig); // export is not necesary, just added to remove the warning
 // const analytics = getAnalytics(app);
 
 //export const googleAPIKey = 'AIzaSyDbuVBC5I-97jCizmKpK2MIwQmiD5sUh2E';
