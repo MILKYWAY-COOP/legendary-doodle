@@ -23,7 +23,7 @@ const Navbar = () => {
   const { innerWidth } = window;
 
   list.forEach((listItem) => {
-    if (listItem.className !== 'not' && innerWidth > 900) {
+    if (listItem.className !== 'not') {
       listItem.addEventListener('mouseenter', (e) => {
         const target = e.target as HTMLElement;
         const navCoords = nav?.getBoundingClientRect();
@@ -45,7 +45,6 @@ const Navbar = () => {
         }, 150);
         background?.classList.add('open');
 
-        console.log(coords);
         setTop(coords.top);
         setLeft(coords.left);
         setWidth(coords.width);
