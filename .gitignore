@@ -13,6 +13,8 @@ src/auth.ts
 # production
 /build
 
+/src/auth.ts
+
 # misc
 .DS_Store
 .env.local
