@@ -1,6 +1,6 @@
 import { MapDiv } from './Map.styled';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import { googleAPIKey } from '../../auth';
+import { googleAPIKey } from '../../firebase';
 import { useMemo } from 'react';
 
 interface MapProps {
