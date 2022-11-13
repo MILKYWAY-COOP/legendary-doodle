@@ -20,8 +20,6 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  const { innerWidth } = window;
-
   list.forEach((listItem) => {
     if (listItem.className !== 'not') {
       listItem.addEventListener('mouseenter', (e) => {
